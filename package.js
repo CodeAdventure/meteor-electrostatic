@@ -14,4 +14,6 @@ Package.on_use(function(api) {
     ['server']
   );
 
+  api.export('Electrostatic');
+
 });

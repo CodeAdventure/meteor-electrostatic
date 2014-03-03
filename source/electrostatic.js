@@ -4,7 +4,9 @@ var recursiveReadDirectory = Npm.require('recursive-readdir');
 var metaMarked = Npm.require('meta-marked');
 var fileSystem = Npm.require('fs');
 
-Meteor.startup(function() {
+Electrostatic = {};
+
+Electrostatic.generate = function(generateCallback) {
 
   var staticRootPath = appRootPath + '/private/static';
 
@@ -42,8 +44,13 @@ Meteor.startup(function() {
         meteorCollection.insert(doc);
 
       }));
+
+      Electrostatic[name] = meteorCollection;
+
     }));
+
+    if(generateCallback) generateCallback();
 
   }));
 
-});
+};

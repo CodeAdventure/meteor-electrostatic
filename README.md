@@ -45,18 +45,35 @@ that specific document is inserted by Electrostatic. All other meta data is opti
 and you can define any properties you want. All properties except `collection` are
 copied over to the document that is inserted in the database.
 
+On your server side you have to tell Electrostatic to generate the data:
+
+```Javascript
+if (Meteor.isServer) {
+  Meteor.startup(function () {
+
+    Electrostatic.generate(function() {
+
+      // do something with the generated collections here
+
+      Electrostatic.pages.allow({ ... });
+      Electrostatic.articles.deny({ ... });
+    });
+
+  });
+}
+```
+
 Be aware that Electrostatic always removes all documents from its managed collections
 before inserting the existing ones again. There is no algorithm that checks if the
 document actually changed or anything. So you won't be able to reference the document
 by id, because it will change everytime Electrostatic runs.
 
-Electrostatic only runs once everytime your Meteor server restarts so it should not
-affect your production environment too badly (hopefully).
-
 ## Examples
 You can look through a [simple example app that uses Electrostatic](https://github.com/CodeAdventure/meteor-electrostatic-example).
 
 ## Release History
+0.1.3 - Improving API / make it work on server side too
+0.1.2 - Fixing issues with Atmosphere
 0.1.1 - First release
 
 ## License
