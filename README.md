@@ -89,9 +89,9 @@ by id, because it will change everytime Electrostatic runs.
 You can look through a [simple example app that uses Electrostatic](https://github.com/CodeAdventure/meteor-electrostatic-example).
 
 ## Release History
-0.1.3 - Improving API / make it work on server side too
-0.1.2 - Fixing issues with Atmosphere
-0.1.1 - First release
+* 0.1.3 - Improving API / make it work on server side too
+* 0.1.2 - Fixing issues with Atmosphere
+* 0.1.1 - First release
 
 ## License
 Copyright (c) 2013 Code Adventure
