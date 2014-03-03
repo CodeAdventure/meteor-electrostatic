@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "meta-marked": {
+      "version": "0.3.1",
+      "dependencies": {
+        "marked": {
+          "version": "0.3.1"
+        },
+        "js-yaml": {
+          "version": "3.0.2",
+          "dependencies": {
+            "argparse": {
+              "version": "0.1.15",
+              "dependencies": {
+                "underscore": {
+                  "version": "1.4.4"
+                },
+                "underscore.string": {
+                  "version": "2.3.3"
+                }
+              }
+            },
+            "esprima": {
+              "version": "1.0.4"
+            }
+          }
+        }
+      }
+    },
+    "recursive-readdir": {
+      "version": "0.0.2"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "electrostatic",
+  "description": "Generate database content from static files. Useful for blogs and static pages.",
+  "homepage": "https://github.com/CodeAdventure/meteor-electrostatic",
+  "author": "Code Adventure",
+  "version": "0.1.0",
+  "git": "git@github.com:CodeAdventure/meteor-electrostatic.git",
+  "packages": {}
+}
