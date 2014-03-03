@@ -57,7 +57,7 @@ affect your production environment too badly (hopefully).
 You can look through a [simple example app that uses Electrostatic](https://github.com/CodeAdventure/meteor-electrostatic-example).
 
 ## Release History
-0.1.0 - First release
+0.1.1 - First release
 
 ## License
 Copyright (c) 2013 Code Adventure
