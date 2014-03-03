@@ -53,12 +53,29 @@ if (Meteor.isServer) {
 
     Electrostatic.generate(function() {
 
-      // do something with the generated collections here
-
+      // do something with the generated collections here like this:
       Electrostatic.pages.allow({ ... });
       Electrostatic.articles.deny({ ... });
     });
 
+  });
+}
+```
+
+On your client side you can use the generated collections as usual:
+
+```Javascript
+if (Meteor.isClient) {
+
+  var Pages = new Meteor.Collection('pages');
+  var Articles = new Meteor.Collection('articles');
+
+  Template.pages_index.helpers({
+    pages: Pages.find()
+  });
+
+  Template.blog_index.helpers({
+    articles: Articles.find()
   });
 }
 ```
