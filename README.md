@@ -27,13 +27,14 @@ title: Welcome to Electrostatic
 This is my static page content written in markdown!
 ```
 
-Example for generating static pages:
+Example for generating blog articles:
 
 ```markdown
 ---
 collection: articles
 author: Dominik Guzei
 title: Introducing Electrostatic
+slug: introducing-electrostatic
 ---
 
 This is my first blog article about Electrostatic!
