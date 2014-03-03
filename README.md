@@ -25,7 +25,7 @@ title: Welcome to Electrostatic
 ---
 
 This is my static page content written in markdown!
-``
+```
 
 Example for generating static pages:
 
@@ -37,7 +37,7 @@ title: Introducing Electrostatic
 ---
 
 This is my first blog article about Electrostatic!
-``
+```
 
 You have to define the `collection` meta data, as it defines in which collection
 that specific document is inserted by Electrostatic. All other meta data is optional
