@@ -3,7 +3,7 @@
   "description": "Generate database collections filled with content from static files.",
   "homepage": "https://github.com/CodeAdventure/meteor-electrostatic",
   "author": "Code Adventure",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "git": "https://github.com/CodeAdventure/meteor-electrostatic.git",
   "packages": {}
 }

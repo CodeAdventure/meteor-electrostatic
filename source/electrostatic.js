@@ -6,7 +6,11 @@ var fileSystem = Npm.require('fs');
 
 Electrostatic = {};
 
-Electrostatic.generate = function(generateCallback) {
+Electrostatic.generate = function(context, generateCallback) {
+
+  if(!context) {
+    throw new Error("Please provide the global app namespace to Electrostatic::generate.")
+  }
 
   var staticRootPath = appRootPath + '/private/static';
 
@@ -31,9 +35,21 @@ Electrostatic.generate = function(generateCallback) {
 
     _.each(neededCollections, Meteor.bindEnvironment(function(collection, name) {
 
-      var meteorCollection = new Meteor.Collection(name);
+      var meteorCollection = null;
+
+      // check for existing collections (we can only create them once in Meteor)
+      if(context[name]) {
+        // use the existing one
+        meteorCollection = context[name];
+      } else {
+        // create a new one and assign it to the app namespace
+        context[name] = meteorCollection = new Meteor.Collection(name);
+      }
+
+      // remove all existing data from the collection
       meteorCollection.remove({});
 
+      // parse all static content documents and insert the data into the collections
       _.each(collection, Meteor.bindEnvironment(function(item) {
 
         var doc = item.meta;
@@ -44,8 +60,6 @@ Electrostatic.generate = function(generateCallback) {
         meteorCollection.insert(doc);
 
       }));
-
-      Electrostatic[name] = meteorCollection;
 
     }));
 
