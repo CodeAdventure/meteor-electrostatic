@@ -95,6 +95,7 @@ you restart the server)
 You can look through a [simple example app that uses Electrostatic](https://github.com/CodeAdventure/meteor-electrostatic-example).
 
 ## Release History
+* 0.1.6 - Fixes API incompatibility with Meteor.bindEnvironment (version 0.6.6)
 * 0.1.5 - Fixes problems with iron-router and fast-render
 * 0.1.4 - Praying to the gods of Atmosphere (versioning problems)
 * 0.1.3 - Improving API / make it work on server side too

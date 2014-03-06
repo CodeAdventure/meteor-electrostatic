@@ -59,12 +59,12 @@ Electrostatic.generate = function(context, generateCallback) {
 
         meteorCollection.insert(doc);
 
-      }));
+      }, function onException() {}));
 
-    }));
+    }, function onException() {}));
 
     if(generateCallback) generateCallback();
 
-  }));
+  }, function onException() {}));
 
 };
