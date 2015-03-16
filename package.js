@@ -1,5 +1,8 @@
 Package.describe({
-  summary: 'Generate database collections filled with content from static files.'
+  summary: 'Generate database collections filled with content from static files.',
+  name: 'codeadventure:electrostatic',
+  version: '1.3.3',
+  git: 'https://github.com/CodeAdventure/meteor-electrostatic.git'
 });
 
 Npm.depends({
@@ -7,13 +10,11 @@ Npm.depends({
   "recursive-readdir": "0.0.2"
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
 
-  api.add_files(
-    ['source/electrostatic.js'],
-    ['server']
-  );
+  api.versionsFrom("METEOR@1.0");
 
+  api.add_files(['source/electrostatic.js'], 'server');
   api.export('Electrostatic');
 
 });
